@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-header class="mb-5 mt-3">
+    <h1 class="text-center w-100">Login</h1>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <mat-form-field class="w-100">
+        <mat-label>Correo</mat-label>
+        <input matInput placeholder="ejemplo@ejem.com" formControlName="correo">
+      </mat-form-field>
+      <mat-form-field class="w-100">
+        <mat-label>Contraseña</mat-label>
+        <input matInput formControlName="password" type="password">
+      </mat-form-field>
+      <div><button mat-raised-button color="primary">Login</button></div>
+    </form>
+  </mat-card-content>
+</mat-card>

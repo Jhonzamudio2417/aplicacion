@@ -1,0 +1,33 @@
+<div>
+  <h1 class="mb-5 text-center">Buscar</h1>
+</div>
+<mat-form-field appearance="fill">
+  <mat-label>Coleccion</mat-label>
+  <mat-select [(value)]="coleccion" (selectionChange)="ListTermino()">
+    <mat-option value="usuarios">Usuario</mat-option>
+    <mat-option value="productos">Producto</mat-option>
+    <mat-option value="categorias">Categoria</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Termino</mat-label>
+  <mat-select [(value)]="termino" (selectionChange)="Buscar()">
+    <mat-option *ngFor="let item of terminoList" [value]="item.nombre">
+      {{item.nombre}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<div class="mat-elevation-z8" tabindex="0">
+  <table mat-table matSort [dataSource]="data">
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef>Campo</th>
+      <td mat-cell *matCellDef="let element"> {{element.campo}} </td>
+    </ng-container>
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef>Valor</th>
+      <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="encabezadoTabla"></tr>
+    <tr mat-row *matRowDef="let row; columns: encabezadoTabla;"></tr>
+  </table>
+</div>

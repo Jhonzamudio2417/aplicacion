@@ -1,0 +1,46 @@
+<div>
+  <h1 class="mb-5 text-center">Usuarios</h1>
+</div>
+<mat-form-field appearance="fill">
+  <mat-label>N° registros</mat-label>
+  <mat-select [(value)]="cantRegistros" (selectionChange)="Listar()">
+    <mat-option value="5">5</mat-option>
+    <mat-option value="10">10</mat-option>
+    <mat-option value="25">25</mat-option>
+    <mat-option value="50">50</mat-option>
+    <mat-option value="100">100</mat-option>
+  </mat-select>
+</mat-form-field>
+<div class="mat-elevation-z8" tabindex="0">
+  <table mat-table matSort [dataSource]="usuariosData">
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Nombre</th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+    </ng-container>
+    <ng-container matColumnDef="correo">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Correo </th>
+      <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
+    </ng-container>
+    <ng-container matColumnDef="rol">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Rol </th>
+      <td mat-cell *matCellDef="let element"> {{element.rol}} </td>
+    </ng-container>
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let element">
+        <a class="mx-1" (click)="Actualizar(element.id, element.nombre, element.correo, element.password, element.rol)"
+          mat-raised-button color="primary"><mat-icon>edit</mat-icon></a>
+        <a class="mx-1 bg-danger text-white" (click)="Eliminar(element.id)"
+          mat-raised-button><mat-icon>delete</mat-icon></a>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="encabezadoTabla"></tr>
+    <tr mat-row *matRowDef="let row; columns: encabezadoTabla;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>
+<button (click)="Crear()" class="position-absolute bottom-0 end-0 bg-success z-1 m-sm-5" mat-fab
+  matTooltip="Agregar Usuario" aria-label="Agregar usuario">
+  <mat-icon>person_add</mat-icon>
+</button>

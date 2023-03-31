@@ -1,0 +1,11 @@
+{
+  "/api/productos": "/productos",
+  "/api/productos/:id": "/productos/:id",
+  "/api/auth/login": "/usuarios",
+  "/api/auth/login/:id": "/usuarios/:id",
+  "/api/usuarios": "/usuarios",
+  "/api/usuarios/:id": "/usuarios/:id",
+  "/api/categorias": "/categorias",
+  "/api/categorias/:id": "/categorias/:id",
+  "/api/buscar/:coleccion/:termino": "/:coleccion/?nombre=:termino"
+}

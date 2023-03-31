@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-header class="mb-5 mt-3">
+    <h1 class="text-center w-100" *ngIf="IsCreate">Crear Categoria</h1>
+    <h1 class="text-center w-100" *ngIf="!IsCreate">Actualizar Categoria</h1>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="categoriaForm" (ngSubmit)="Validacion()">
+      <mat-form-field class="w-100">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre">
+      </mat-form-field>
+      <div>
+        <button class="mx-1" mat-raised-button color="primary" *ngIf="IsCreate">Crear</button>
+        <button class="mx-1" mat-raised-button color="primary" *ngIf="!IsCreate">Actualizar</button>
+        <a class="mx-1" mat-dialog-close mat-raised-button color="accent">Cerrar</a>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

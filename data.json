@@ -1,0 +1,40 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "admin",
+      "correo": "test1@gmail.com",
+      "password": "123456",
+      "rol": "ADMIN_ROLE"
+    },
+    {
+      "id": 95141,
+      "nombre": "Yo Sumerce",
+      "correo": "yo@yo.com",
+      "password": "123",
+      "rol": "ADMIN_ROLE"
+    }
+  ],
+  "productos": [
+    {
+      "id": 9008,
+      "nombre": "Empanadas",
+      "categoria": 50409
+    },
+    {
+      "id": 13048,
+      "nombre": "Hamburguesa",
+      "categoria": 50409
+    }
+  ],
+  "categorias": [
+    {
+      "id": 50409,
+      "nombre": "Comida Rapida"
+    },
+    {
+      "id": 2440,
+      "nombre": "Hojaldres"
+    }
+  ]
+}
